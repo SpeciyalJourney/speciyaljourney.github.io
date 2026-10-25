@@ -75,7 +75,7 @@
 
   $("rundownList").innerHTML = C.rundown.map(function (r) {
     return '<div class="rd-item reveal"><div class="rd-time">' + esc(r.time) + '</div><div><p class="rd-title">' +
-      esc(r.title) + '</p><p class="rd-desc">' + esc(r.desc) + "</p></div></div>";
+      esc(r.title) + "</p>" + (r.desc ? '<p class="rd-desc">' + esc(r.desc) + "</p>" : "") + "</div></div>";
   }).join("");
 
   $("gallery").innerHTML = C.gallery.map(function (g, i) {

@@ -135,11 +135,11 @@ window.SPECIYAL = {
   event: {
     name: "Gathering Speciyal Journey",
     // Format ISO, zona WIB (+07:00). Dipakai juga untuk hitung mundur.
-    start: "2026-10-31T07:00:00+07:00",
+    start: "2026-10-31T06:00:00+07:00",
     end: "2026-10-31T16:00:00+07:00",
     dayLabel: "Sabtu",
     dateLabel: "31 Oktober 2026",
-    timeLabel: "07.00 WIB — selesai",
+    timeLabel: "06.00 WIB — selesai",
     venue: "Istana Bogor",
     address: "Jl. Ir. H. Juanda No.1, Paledang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16122",
     mapsQuery: "Istana Bogor",
@@ -150,14 +150,11 @@ window.SPECIYAL = {
 
   // ---------- Rundown ----------
   rundown: [
-    { time: "06.00", title: "Kumpul & Keberangkatan", desc: "[ISI] Titik kumpul KPP Pratama Jakarta Pasar Minggu" },
-    { time: "08.00", title: "Tiba di Bogor & Registrasi", desc: "[ISI]" },
-    { time: "09.00", title: "Pembukaan", desc: "[ISI] MC & doa pembuka" },
-    { time: "09.30", title: "Speciyal Journey Session", desc: "[ISI] Kilas balik perjalanan Pak Iyal" },
-    { time: "11.30", title: "Ishoma", desc: "[ISI] Makan siang bersama" },
-    { time: "13.00", title: "Kesan & Pesan", desc: "[ISI]" },
-    { time: "14.30", title: "Pemberian Kenang-kenangan", desc: "[ISI]" },
-    { time: "15.30", title: "Foto Bersama & Penutup", desc: "[ISI]" },
+    { time: "06.00", title: "Kumpul di KPP", desc: "" },
+    { time: "06.30", title: "Berangkat dari KPP", desc: "" },
+    { time: "07.30", title: "Jalan Santai dan Games Kelompok", desc: "" },
+    { time: "09.00", title: "Speciyal Journey Session - Performance - Doorprize", desc: "" },
+    { time: "12.00", title: "Makan siang & foto bersama", desc: "" },
   ],
 
   // ---------- Album (taruh foto di assets/img/, lalu tambahkan baris di sini) ----------
