@@ -329,7 +329,7 @@ main {
   position: fixed; left: 50%; bottom: 12px; z-index: 30;
   transform: translate(-50%, 150%); transition: transform .5s ease;
   width: calc(100% - 24px); max-width: calc(var(--maxw) - 24px);
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
   background: var(--maroon); border-radius: 14px; padding: 6px 4px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .3);
   border: 2px solid var(--mustard);
@@ -377,4 +377,205 @@ main {
   .ticket-count { font-size: 3.2rem; padding: 14px 34px; }
   .event-card { grid-template-columns: 96px 1fr; }
   .countdown b { font-size: 1.4rem; }
+}
+
+/* =====================================================================
+   v2 — Pita, peta rute, boarding pass, ulang tahun, album, animasi
+   ===================================================================== */
+.lead { font-style: italic; color: var(--muted); font-size: .92rem; margin: -10px 0 18px; }
+
+/* Hero clouds */
+.clouds { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.clouds i {
+  position: absolute; height: 14px; border-radius: 999px; opacity: .55;
+  background: linear-gradient(90deg, transparent, var(--sky) 20%, var(--sky) 80%, transparent);
+  animation: drift 28s linear infinite;
+}
+.clouds i:nth-child(1) { top: 110px; width: 120px; left: -130px; }
+.clouds i:nth-child(2) { top: 200px; width: 80px; left: -90px; animation-duration: 36s; animation-delay: -12s; }
+.clouds i:nth-child(3) { top: 46px; width: 60px; left: -70px; animation-duration: 22s; animation-delay: -6s; opacity: .4; }
+@keyframes drift { to { transform: translateX(640px); } }
+.big-title { animation: wobble 6s ease-in-out infinite; }
+@keyframes wobble { 0%, 100% { transform: rotate(-1deg); } 50% { transform: rotate(1deg) translateY(-2px); } }
+.ticket-count { animation: pulse 2.6s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+.scroll-hint {
+  display: block; width: 34px; height: 34px; margin: 14px auto 0; border-radius: 50%;
+  border: 2px solid var(--terra); color: var(--terra); text-decoration: none; font-size: 1.2rem; line-height: 26px;
+  animation: bob 1.6s ease-in-out infinite;
+}
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+/* Pita "Speciyal Journey" berjalan */
+.ribbon-band {
+  position: relative; background: #fff; overflow: hidden; padding: 10px 0;
+  border-top: 4px solid var(--terra); border-bottom: 4px solid var(--terra);
+  box-shadow: inset 0 3px 0 #fff, inset 0 -3px 0 #fff, 0 4px 14px rgba(74, 28, 16, .15);
+  transform: rotate(-2deg) scale(1.06); margin: 18px 0;
+}
+.ribbon-band.reverse { transform: rotate(2deg) scale(1.06); }
+.ribbon-band.flat { transform: none; margin: 0; border-width: 3px; }
+.ribbon-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+.ribbon-band.reverse .ribbon-track { animation-direction: reverse; }
+.ribbon-track img { height: 34px; width: auto; margin: 0 14px; flex: none; }
+.ribbon-track span { color: var(--terra); font-size: 1.1rem; align-self: center; flex: none; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Finish line */
+.finish { margin: 10px 0 0; }
+.checker {
+  height: 22px;
+  background:
+    conic-gradient(var(--ink) 25%, #fff 0 50%, var(--ink) 0 75%, #fff 0) 0 0 / 22px 22px;
+}
+
+/* Profil extras */
+.portrait-tape {
+  position: absolute; top: -12px; left: 50%; width: 90px; height: 24px; transform: translateX(-50%) rotate(-4deg);
+  background: rgba(232, 176, 75, .65); box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+.values { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: -6px 0 22px; }
+.values span {
+  font-family: "Oswald", sans-serif; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase;
+  border: 1.5px dashed var(--terra); color: var(--terra); padding: 3px 12px; border-radius: 999px;
+}
+.facts b { font-size: 1.9rem; }
+.edu {
+  display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; text-align: left;
+  background: var(--cream); border-left: 5px solid var(--mustard); border-radius: 6px;
+  padding: 12px 14px; margin: 6px 0 26px; font-size: .9rem;
+}
+.edu-icon { font-size: 2rem; text-align: center; }
+.bday {
+  position: relative; margin: 10px 0 26px; padding: 26px 18px 20px; border-radius: 14px; overflow: hidden;
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(232, 176, 75, .5) 0 3px, transparent 4px),
+    radial-gradient(circle at 80% 30%, rgba(156, 195, 217, .6) 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 80%, rgba(232, 176, 75, .5) 0 2px, transparent 3px),
+    radial-gradient(circle at 25% 75%, rgba(251, 243, 226, .5) 0 2px, transparent 3px),
+    linear-gradient(160deg, var(--terra), var(--maroon));
+  box-shadow: var(--shadow);
+}
+.bday-cake { font-size: 2.6rem; animation: bob 2s ease-in-out infinite; }
+.bday-date { font-family: "Alfa Slab One", serif; font-size: 2.4rem; line-height: 1; color: var(--mustard); text-shadow: 3px 3px 0 rgba(0, 0, 0, .25); }
+.bday-title { font-family: "Kalam", cursive; font-size: 1.45rem; }
+.bday-sub { font-family: "Oswald", sans-serif; letter-spacing: .1em; text-transform: uppercase; font-size: .8rem; opacity: .85; }
+.bday-note { margin-top: 10px; font-size: .92rem; border-top: 1px dashed rgba(251, 243, 226, .5); padding-top: 10px; }
+
+/* Peta rute */
+.route-card {
+  position: relative; background: #f3e3c3; border: 3px solid var(--maroon); border-radius: 12px;
+  padding: 8px 6px 40px; box-shadow: 4px 4px 0 var(--terra); overflow: hidden;
+  background-image: repeating-linear-gradient(0deg, rgba(122, 38, 20, .05) 0 1px, transparent 1px 24px),
+                    repeating-linear-gradient(90deg, rgba(122, 38, 20, .05) 0 1px, transparent 1px 24px);
+}
+.route-map { width: 100%; height: auto; display: block; }
+.route-map .sea-label { font-family: "Kalam", cursive; fill: rgba(91, 110, 46, .55); font-size: 9px; letter-spacing: .25em; }
+.route-map .land { fill: #d9c48f; stroke: #8f6a3a; stroke-width: .8; }
+.route-map .route-bg { fill: none; stroke: rgba(181, 69, 42, .18); stroke-width: 2.4; stroke-linecap: round; }
+.route-map .route { fill: none; stroke: var(--terra); stroke-width: 2.2; stroke-dasharray: 5 4; stroke-linecap: round; }
+.route-map .pin circle { fill: var(--terra); stroke: #fff; stroke-width: 1.4; }
+.route-map .pin.final circle { fill: var(--mustard); stroke: var(--maroon); }
+.route-map .pin.other circle { fill: #fff; stroke: var(--terra); }
+.route-map .pin text { font-family: "Oswald", sans-serif; font-size: 9.5px; fill: var(--maroon); font-weight: 600; paint-order: stroke; stroke: #f3e3c3; stroke-width: 2.5px; }
+.route-map .pin { opacity: 0; transition: opacity .4s, transform .4s; transform-box: fill-box; transform-origin: center; }
+.route-map.play .pin, .route-map .pin.other { opacity: 1; }
+.route-map .far-box rect { fill: var(--paper); stroke: var(--maroon); stroke-width: 1.2; }
+.route-map .far-box text { font-family: "Oswald", sans-serif; font-size: 8px; fill: var(--maroon); }
+.route-map .compass { font-family: "Rye", serif; font-size: 9px; fill: var(--maroon); }
+.route-map .plane { font-size: 13px; }
+.btn-mini {
+  position: absolute; right: 10px; bottom: 8px;
+  font-family: "Oswald", sans-serif; font-size: .75rem; letter-spacing: .06em;
+  background: var(--maroon); color: var(--paper); border: 0; border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.stops {
+  list-style: none; display: flex; gap: 8px; overflow-x: auto; padding: 16px 4px 8px;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.stops::-webkit-scrollbar { display: none; }
+.stops li {
+  flex: none; scroll-snap-align: start; background: var(--paper); border: 1.5px solid var(--terra); border-radius: 8px;
+  padding: 6px 12px; text-align: left; box-shadow: 2px 2px 0 var(--maroon);
+}
+.stops b { display: block; font-family: "Oswald", sans-serif; color: var(--terra); font-size: .75rem; letter-spacing: .1em; }
+.stops span { font-family: "Rye", serif; color: var(--maroon); font-size: .9rem; white-space: nowrap; }
+
+/* Timeline v2 */
+.timeline li::before { content: attr(data-icon); font-size: .85rem; }
+.timeline li:last-child::before { content: attr(data-icon); }
+.tl-title { font-family: "Rye", serif; color: var(--maroon); font-size: 1.02rem; line-height: 1.25; margin-top: 6px; }
+.tl-place { font-family: "Oswald", sans-serif; color: var(--terra); font-size: .85rem; letter-spacing: .04em; margin: 2px 0 6px; }
+.tl-card.finish-card {
+  background: var(--maroon); color: var(--paper); border-color: var(--maroon);
+  background-image: linear-gradient(135deg, rgba(232, 176, 75, .25), transparent 60%);
+}
+.tl-card.finish-card .tl-title { color: var(--mustard); }
+.tl-card.finish-card .tl-place { color: var(--cream); }
+.tl-card.finish-card .tl-year { background: var(--mustard); color: var(--maroon); }
+
+/* Boarding pass */
+.passes { display: grid; gap: 12px; text-align: left; }
+.pass {
+  display: grid; grid-template-columns: 92px 1fr; background: var(--paper);
+  border-radius: 10px; overflow: hidden; border: 1.5px solid #dcc59a;
+  box-shadow: 0 4px 12px rgba(74, 28, 16, .1); position: relative;
+}
+.pass.hidden-pass { display: none; }
+.passes.open .pass.hidden-pass { display: grid; }
+.pass-date {
+  background: var(--terra); color: var(--paper); display: flex; flex-direction: column; justify-content: center; align-items: center;
+  font-family: "Oswald", sans-serif; text-align: center; padding: 10px 4px; border-right: 2px dashed var(--paper);
+}
+.pass-date small { font-size: .62rem; letter-spacing: .2em; opacity: .8; }
+.pass-date b { font-size: .95rem; letter-spacing: .03em; line-height: 1.2; }
+.pass.special .pass-date { background: var(--leaf); }
+.pass.current .pass-date { background: var(--maroon); }
+.pass-body { padding: 10px 12px; }
+.pass-role { font-family: "Alfa Slab One", serif; color: var(--terra); font-size: .95rem; line-height: 1.2; }
+.pass-unit { font-size: .82rem; color: var(--ink); line-height: 1.4; margin-top: 3px; }
+.pass-no { position: absolute; right: 10px; top: 8px; font-family: "Oswald", sans-serif; font-size: .62rem; letter-spacing: .15em; color: var(--muted); }
+.pass.current::after {
+  content: "NOW"; position: absolute; right: -24px; bottom: 10px; transform: rotate(-35deg);
+  background: var(--mustard); color: var(--maroon); font-family: "Oswald", sans-serif; font-size: .6rem; letter-spacing: .2em;
+  padding: 2px 28px;
+}
+#morePasses { margin-top: 16px; }
+
+/* Album v2 */
+.gallery figure { transition: transform .3s; }
+.gallery figure:hover { transform: rotate(0) scale(1.02); }
+.gallery figure:first-child img { aspect-ratio: 16 / 10; object-position: 50% 40%; }
+.gallery img { object-position: 50% 30%; }
+
+/* Lightbox v2 */
+.lightbox { cursor: default; }
+.lightbox figure { max-width: 100%; text-align: center; }
+.lightbox figcaption { color: var(--cream); font-family: "Kalam", cursive; margin-top: 10px; font-size: 1.1rem; }
+.lb-close, .lb-nav {
+  position: absolute; z-index: 2; background: rgba(74, 28, 16, .75); color: var(--cream); border: 1px solid rgba(251, 243, 226, .4); cursor: pointer;
+  width: 44px; height: 44px; border-radius: 50%; font-size: 1.6rem; line-height: 1;
+}
+.lb-close { top: 14px; right: 14px; font-size: 1.2rem; }
+.lb-nav.prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lb-nav.next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+/* Closing v2 */
+.closing-wordmark { width: 92%; margin: 4px auto 6px; }
+.flag { font-size: 2.2rem; animation: wave 1.4s ease-in-out infinite; transform-origin: 30% 90%; display: inline-block; }
+@keyframes wave { 50% { transform: rotate(-12deg); } }
+.closing-logo { margin: 18px 0 0; }
+
+/* Confetti */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 70; overflow: hidden; }
+.confetti i {
+  position: absolute; top: -20px; width: 8px; height: 14px; border-radius: 2px;
+  animation: fall linear forwards;
+}
+@keyframes fall { to { transform: translateY(110vh) rotate(720deg); opacity: .9; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .clouds i, .big-title, .ticket-count, .scroll-hint, .ribbon-track, .bday-cake, .flag { animation: none; }
+  .confetti { display: none; }
 }

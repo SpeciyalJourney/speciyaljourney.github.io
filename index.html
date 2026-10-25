@@ -44,6 +44,7 @@
     <section id="home" class="hero frame">
       <span class="corner tl">✦</span><span class="corner tr">✦</span>
       <span class="corner bl">✦</span><span class="corner br">✦</span>
+      <div class="clouds" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="banner reveal">✦ Speciyal Journey ✦</div>
       <h2 class="big-title reveal">BOGOR</h2>
       <p class="tagline reveal" id="tagline"></p>
@@ -60,7 +61,11 @@
         <div class="brush">Getting Closer</div>
         <div class="pill" id="heroDate">31 OCTOBER 2026</div>
       </div>
+      <a href="#countdown" class="scroll-hint" aria-label="Gulir ke bawah">⌄</a>
     </section>
+
+    <!-- PITA SPECIYAL JOURNEY -->
+    <div class="ribbon-band" aria-hidden="true"><div class="ribbon-track" data-ribbon></div></div>
 
     <!-- COUNTDOWN -->
     <section class="section countdown-wrap">
@@ -80,26 +85,57 @@
       <div class="portrait reveal">
         <div class="portrait-frame"><img id="honoreePhoto" alt="Foto Pak Iyal" /></div>
         <div class="portrait-badge">Purnabakti 2026</div>
+        <div class="portrait-tape"></div>
       </div>
       <h3 class="name reveal" id="honoreeName"></h3>
       <p class="nick reveal" id="honoreeNick"></p>
       <p class="position reveal" id="honoreePos"></p>
       <div class="facts reveal" id="facts"></div>
+      <div class="values reveal" id="values"></div>
       <div class="bio reveal" id="bio"></div>
-      <p class="meta reveal" id="birth"></p>
-      <div class="retire-card reveal">
-        <span class="ribbon">30 · 10 · 2026</span>
-        <p id="retire"></p>
+      <div class="edu reveal">
+        <span class="edu-icon">🎓</span>
+        <p id="edu"></p>
+      </div>
+      <div class="bday reveal">
+        <div class="bday-cake" aria-hidden="true">🎂</div>
+        <p class="bday-date">30 · 10</p>
+        <p class="bday-title">Selamat Ulang Tahun ke-58</p>
+        <p class="bday-sub" id="birth"></p>
+        <p class="bday-note" id="retire"></p>
       </div>
       <blockquote class="quote reveal" id="quote"></blockquote>
     </section>
 
-    <!-- PERJALANAN -->
-    <section id="journey" class="section alt">
+    <!-- PETA PERJALANAN -->
+    <section id="peta" class="section alt">
+      <div class="banner reveal">✦ Peta Perjalanan ✦</div>
+      <h3 class="section-title reveal">Rute Pengabdian</h3>
+      <p class="lead reveal">Dari Jakarta ke Yokohama, menyeberang ke Sumbawa, lalu kembali ke Jakarta — 34 tahun dalam satu rute.</p>
+      <div class="route-card reveal">
+        <svg id="routeMap" class="route-map" role="img" aria-label="Peta rute perjalanan karier Pak Iyal"></svg>
+        <button class="btn-mini" id="replayRoute" type="button">↻ Putar ulang rute</button>
+      </div>
+      <ol class="stops" id="stops"></ol>
+    </section>
+
+    <!-- JEJAK LANGKAH -->
+    <section id="journey" class="section">
       <div class="banner reveal">✦ Perjalanan ✦</div>
       <h3 class="section-title reveal">Jejak Langkah Pengabdian</h3>
       <ol class="timeline" id="timeline"></ol>
     </section>
+
+    <!-- RIWAYAT JABATAN -->
+    <section id="jabatan" class="section alt">
+      <div class="banner reveal">✦ Boarding Pass ✦</div>
+      <h3 class="section-title reveal">Riwayat Jabatan</h3>
+      <div class="passes" id="passes"></div>
+      <button class="btn btn-ghost" id="morePasses" type="button">Lihat semua jabatan ▾</button>
+    </section>
+
+    <!-- PITA SPECIYAL JOURNEY -->
+    <div class="ribbon-band reverse" aria-hidden="true"><div class="ribbon-track" data-ribbon></div></div>
 
     <!-- ACARA & MAPS -->
     <section id="acara" class="section">
@@ -130,22 +166,31 @@
       <div class="rundown" id="rundownList"></div>
     </section>
 
-    <!-- GALERI -->
+    <!-- ALBUM -->
     <section id="galeri" class="section">
-      <div class="banner reveal">✦ Galeri ✦</div>
+      <div class="banner reveal">✦ Album ✦</div>
       <h3 class="section-title reveal">Lembar Kenangan</h3>
+      <p class="lead reveal">Ketuk foto untuk memperbesar.</p>
       <div class="gallery" id="gallery"></div>
     </section>
+
+    <!-- FINISH LINE -->
+    <div class="finish" aria-hidden="true">
+      <div class="checker"></div>
+      <div class="ribbon-band flat"><div class="ribbon-track" data-ribbon></div></div>
+      <div class="checker"></div>
+    </div>
 
     <!-- PENUTUP -->
     <section class="section closing frame">
       <span class="corner tl">✦</span><span class="corner tr">✦</span>
       <span class="corner bl">✦</span><span class="corner br">✦</span>
-      <img class="closing-logo reveal" src="assets/img/logo-speciyal.jpg" alt="Logo Speciyal Journey" />
+      <img class="closing-wordmark reveal" src="assets/img/logo-wordmark.png" alt="Speciyal Journey" />
+      <p class="flag reveal" aria-hidden="true">🏁</p>
       <p class="closing-text reveal" id="closing"></p>
       <p class="brush reveal">Selamat Purnabakti</p>
       <p class="signature reveal">Keluarga Besar<br /><b id="office"></b></p>
-      <div class="leaves reveal">🌿 ✦ 🌿</div>
+      <img class="closing-logo reveal" src="assets/img/logo-speciyal.jpg" alt="Logo Warmindo Speciyal Journey" />
     </section>
 
     <footer class="footer">Speciyal Journey · 2026</footer>
@@ -155,14 +200,21 @@
   <nav class="bottom-nav" id="bottomNav" aria-label="Navigasi">
     <a href="#home"><span>⌂</span>Home</a>
     <a href="#profil"><span>☺</span>Profil</a>
-    <a href="#journey"><span>➶</span>Jejak</a>
+    <a href="#peta"><span>➶</span>Jejak</a>
     <a href="#acara"><span>⚑</span>Acara</a>
     <a href="#rundown"><span>☰</span>Rundown</a>
+    <a href="#galeri"><span>▣</span>Album</a>
   </nav>
   <button class="music-btn" id="musicBtn" aria-label="Putar / jeda musik">♫</button>
   <audio id="bgm" loop preload="none"></audio>
 
-  <div class="lightbox" id="lightbox" hidden><img alt="" /><p></p></div>
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" type="button" aria-label="Tutup">✕</button>
+    <button class="lb-nav prev" type="button" aria-label="Sebelumnya">‹</button>
+    <figure><img alt="" /><figcaption></figcaption></figure>
+    <button class="lb-nav next" type="button" aria-label="Berikutnya">›</button>
+  </div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
 
   <script src="js/config.js"></script>
   <script src="js/main.js"></script>
