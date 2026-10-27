@@ -174,6 +174,9 @@ window.SPECIYAL = {
     { src: "assets/img/album-07.jpg", caption: "Bersama rekan-rekan Kemenkeu" },
     { src: "assets/img/album-08.jpg", caption: "Ceria dalam busana nusantara" },
     { src: "assets/img/album-09.jpg", caption: "Salam hangat & kenang-kenangan" },
+    { src: "assets/img/album-10.jpg", caption: "Kompak berbatik bersama" },
+    { src: "assets/img/album-11.jpg", caption: "Hari Pajak 2026" },
+    { src: "assets/img/album-12.jpg", caption: "Rapimnas III DJP 2026" },
   ],
 
   closing:

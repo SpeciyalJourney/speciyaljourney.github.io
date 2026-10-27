@@ -615,3 +615,6 @@ main {
 /* Keterangan album di bawah foto (tidak menutupi gambar) */
 .gallery figure { padding: 6px 6px 8px; }
 .gallery figcaption { position: static; margin-top: 5px; line-height: 1.25; padding: 0 2px; }
+/* Foto terakhir yang sendirian dibuat selebar penuh */
+.gallery figure:last-child:nth-child(even) { grid-column: span 2; transform: rotate(1deg); }
+.gallery figure:last-child:nth-child(even) img { aspect-ratio: 16 / 10; object-position: 50% 50%; }
