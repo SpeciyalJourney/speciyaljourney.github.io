@@ -611,3 +611,7 @@ main {
 /* "IYAL" pada kata Speciyal — penanda acara untuk Pak Iyal */
 .iyal { color: #e3a536; text-shadow: 1px 1px 0 var(--maroon); }
 .event-date .iyal, .bday .iyal, .retire-card .iyal, .tl-card.finish-card .iyal, .pill .iyal { text-shadow: 1px 1px 0 rgba(0, 0, 0, .35); }
+
+/* Keterangan album di bawah foto (tidak menutupi gambar) */
+.gallery figure { padding: 6px 6px 8px; }
+.gallery figcaption { position: static; margin-top: 5px; line-height: 1.25; padding: 0 2px; }
