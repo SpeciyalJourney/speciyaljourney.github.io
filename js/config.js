@@ -141,11 +141,11 @@ window.SPECIYAL = {
     dateLabel: "31 Oktober 2026",
     timeLabel: "06.00 WIB — selesai",
     venue: "Kebun Raya Bogor",
-    address: "Meeting point 07.30 di Pintu Masuk 1 · Lokasi acara: Resto Raasaa · Parkir kendaraan pribadi/bus di KPPN Bogor",
+    address: "Meeting point 07.30 di Pintu Masuk 1 · Lokasi acara: Resto Raasaa · Parkir kendaraan pribadi/bus di KPPN Bogor · Bawa perlengkapan pribadi & jas/payung hujan",
     mapsQuery: "Pintu Masuk 1 Kebun Raya Bogor",
     // Opsional: tempel link Google Maps khusus (titik kumpul, dll). Kosongkan = pakai mapsQuery.
     mapsLink: "",
-    dressCode: "Bawa perlengkapan pribadi & jas/payung hujan. Mohon tepat waktu!",
+    dressCode: "Dress code: SERAGAM SPECIYAL JOURNEY (Atasan & Bawahan Bebas)",
   },
 
   // ---------- Rundown ----------

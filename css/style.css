@@ -282,7 +282,7 @@ main {
 .event-venue { padding: 14px; }
 .venue { font-family: "Rye", serif; color: var(--maroon); font-size: 1.3rem; line-height: 1.2; }
 .addr { font-size: .85rem; color: var(--muted); margin: 6px 0; }
-.dress { font-size: .85rem; font-style: italic; }
+.dress { font-size: .85rem; font-weight: 600; color: var(--maroon); background: rgba(232, 176, 75, .3); border-radius: 6px; padding: 4px 8px; margin-top: 6px; }
 .map {
   border: 3px solid var(--maroon); border-radius: 10px; overflow: hidden;
   box-shadow: var(--shadow); margin-bottom: 18px; background: var(--cream);
