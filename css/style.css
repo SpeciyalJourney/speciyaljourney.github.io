@@ -607,3 +607,7 @@ main {
   font-family: "Oswald", sans-serif; font-size: .75rem; letter-spacing: .05em; padding: 4px 10px; border-radius: 999px;
 }
 @media (prefers-reduced-motion: reduce) { .poster-count { animation: none; } }
+
+/* "IYAL" pada kata Speciyal — penanda acara untuk Pak Iyal */
+.iyal { color: #e3a536; text-shadow: 1px 1px 0 var(--maroon); }
+.event-date .iyal, .bday .iyal, .retire-card .iyal, .tl-card.finish-card .iyal, .pill .iyal { text-shadow: 1px 1px 0 rgba(0, 0, 0, .35); }

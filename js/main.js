@@ -355,4 +355,24 @@
     setTimeout(function () { box.innerHTML = ""; }, 5500);
   }
   $("openBtn").addEventListener("click", confetti);
+  /* ---------- Sorot "IYAL" pada setiap kata Speciyal ---------- */
+  (function highlightIyal(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var tag = n.parentNode && n.parentNode.nodeName;
+        if (tag === "SCRIPT" || tag === "STYLE" || tag === "TEXT" || (n.parentNode.classList && n.parentNode.classList.contains("iyal"))) return NodeFilter.FILTER_REJECT;
+        return /spec(iyal)/i.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      var frag = document.createDocumentFragment(), parts = n.nodeValue.split(/(iyal)/i);
+      parts.forEach(function (part, i) {
+        if (i % 2) { var sp = document.createElement("span"); sp.className = "iyal"; sp.textContent = part; frag.appendChild(sp); }
+        else if (part) frag.appendChild(document.createTextNode(part));
+      });
+      n.parentNode.replaceChild(frag, n);
+    });
+  })(document.body);
 })();
