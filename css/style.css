@@ -281,8 +281,12 @@ main {
 .event-date b { font-family: "Alfa Slab One", serif; font-weight: 400; font-size: 1.05rem; line-height: 1.25; margin: 6px 0; text-transform: none; }
 .event-venue { padding: 14px; }
 .venue { font-family: "Rye", serif; color: var(--maroon); font-size: 1.3rem; line-height: 1.2; }
-.addr { font-size: .85rem; color: var(--muted); margin: 6px 0; }
-.dress { font-size: .85rem; font-weight: 600; color: var(--maroon); background: rgba(232, 176, 75, .3); border-radius: 6px; padding: 4px 8px; margin-top: 6px; }
+.addr { font-size: .85rem; color: var(--muted); margin: 4px 0 0; font-style: italic; }
+.dress { font-size: .85rem; font-weight: 600; color: var(--maroon); background: rgba(232, 176, 75, .3); border-radius: 6px; padding: 6px 10px; margin: 10px 0 8px; line-height: 1.4; }
+.dress b { display: block; font-family: "Oswald", sans-serif; font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--terra); }
+.ev-notes { list-style: none; font-size: .85rem; line-height: 1.45; }
+.ev-notes li { position: relative; padding-left: 20px; margin-top: 7px; }
+.ev-notes li::before { content: "✦"; position: absolute; left: 2px; top: 0; color: var(--terra); font-size: .8rem; }
 .map {
   border: 3px solid var(--maroon); border-radius: 10px; overflow: hidden;
   box-shadow: var(--shadow); margin-bottom: 18px; background: var(--cream);
