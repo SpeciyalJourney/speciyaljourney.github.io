@@ -145,7 +145,7 @@ window.SPECIYAL = {
     // Poin-poin info acara (ditampilkan sebagai daftar)
     notes: [
       "Meeting point pukul 07.30 WIB di Pintu Masuk 1, Kebun Raya Bogor",
-      "Parkir Kendaraan Pribadi / Bus di KPPN Bogor",
+      "Parkir Kendaraan Pribadi / Bus di Kanwil DJP Jawa Barat III",
       "Bawa Perlengkapan pribadi & Jas Hujan/Payung",
     ],
     mapsQuery: "Pintu Masuk 1 Kebun Raya Bogor",
