@@ -15,8 +15,6 @@
 
   /* ---------- Isi konten dari config ---------- */
   var H = C.honoree, E = C.event;
-  $("tagline").innerHTML = C.tagline.map(esc).join("<br>");
-  $("heroDate").textContent = E.dateLabel.toUpperCase();
   $("honoreePhoto").src = H.photo;
   $("honoreeName").textContent = H.name;
   $("honoreeNick").textContent = "“" + H.nickname + "”";
@@ -70,7 +68,6 @@
   $("evVenue").textContent = E.venue;
   $("evAddr").textContent = E.address;
   $("evDress").textContent = E.dressCode;
-  $("mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(E.mapsQuery) + "&z=16&output=embed";
   $("mapBtn").href = E.mapsLink || ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(E.mapsQuery));
 
   $("rundownList").innerHTML = C.rundown.map(function (r) {
@@ -105,7 +102,9 @@
     $("cdS").textContent = Math.floor(diff / 1e3) % 60;
     // H-n dihitung per tanggal kalender WIB
     var hDays = Math.floor((target + WIB) / DAY) - Math.floor((now + WIB) / DAY);
-    $("hCount").textContent = hDays > 0 ? "H-" + hDays : hDays === 0 ? "HARI-H" : "TERIMA KASIH";
+    var label = hDays > 0 ? "H-" + hDays : hDays === 0 ? "HARI-H" : "TERIMA KASIH";
+    var hc = $("hCount");
+    if (hc.textContent !== label) { hc.textContent = label; hc.style.fontSize = Math.min(19, 60 / label.length) + "cqw"; }
   }
   tick();
   setInterval(tick, 1000);

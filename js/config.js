@@ -140,12 +140,12 @@ window.SPECIYAL = {
     dayLabel: "Sabtu",
     dateLabel: "31 Oktober 2026",
     timeLabel: "06.00 WIB — selesai",
-    venue: "Istana Bogor",
-    address: "Jl. Ir. H. Juanda No.1, Paledang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16122",
-    mapsQuery: "Istana Bogor",
+    venue: "Kebun Raya Bogor",
+    address: "Meeting point 07.30 di Pintu Masuk 1 · Lokasi acara: Resto Raasaa · Parkir kendaraan pribadi/bus di KPPN Bogor",
+    mapsQuery: "Pintu Masuk 1 Kebun Raya Bogor",
     // Opsional: tempel link Google Maps khusus (titik kumpul, dll). Kosongkan = pakai mapsQuery.
     mapsLink: "",
-    dressCode: "[ISI] Dress code",
+    dressCode: "Bawa perlengkapan pribadi & jas/payung hujan. Mohon tepat waktu!",
   },
 
   // ---------- Rundown ----------
@@ -163,7 +163,6 @@ window.SPECIYAL = {
     { src: "assets/img/album-01.jpg", caption: "Makan bersama, penuh tawa" },
     { src: "assets/img/album-03.jpg", caption: "Bimbingan Mental" },
     { src: "assets/img/album-04.jpg", caption: "Semangat terus!" },
-    { src: "assets/img/poster-bogor.jpg", caption: "Bogor · 31 Oktober 2026" },
   ],
 
   closing:

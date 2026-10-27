@@ -579,3 +579,27 @@ main {
   .clouds i, .big-title, .ticket-count, .scroll-hint, .ribbon-track, .bday-cake, .flag { animation: none; }
   .confetti { display: none; }
 }
+
+/* ===== v3 — Poster hero dengan H-n otomatis & peta gambar ===== */
+.hero-poster { padding: 0 0 18px; text-align: center; }
+.poster { position: relative; container-type: inline-size; line-height: 0; }
+.poster img { width: 100%; display: block; }
+.poster-count {
+  position: absolute; left: 50%; top: 79.4%; transform: translate(-50%, -50%);
+  width: 39%; line-height: 1; white-space: nowrap; text-align: center;
+  font-family: "Alfa Slab One", serif; font-size: 19cqw; letter-spacing: .02em;
+  color: #f7ecd9; text-shadow: .045em .045em 0 #6e2410;
+  animation: pop .9s cubic-bezier(.2, 1.4, .4, 1) both .3s;
+}
+@keyframes pop { from { transform: translate(-50%, -50%) scale(.4); opacity: 0; } }
+.hero-poster .scroll-hint { margin-top: 12px; }
+.map-img {
+  display: block; position: relative; border: 3px solid var(--maroon); border-radius: 10px; overflow: hidden;
+  box-shadow: var(--shadow); margin-bottom: 18px; text-decoration: none;
+}
+.map-img img { width: 100%; display: block; }
+.map-img span {
+  position: absolute; right: 8px; bottom: 8px; background: rgba(74, 28, 16, .85); color: var(--paper);
+  font-family: "Oswald", sans-serif; font-size: .75rem; letter-spacing: .05em; padding: 4px 10px; border-radius: 999px;
+}
+@media (prefers-reduced-motion: reduce) { .poster-count { animation: none; } }
