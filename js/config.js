@@ -169,6 +169,11 @@ window.SPECIYAL = {
     { src: "assets/img/album-01.jpg", caption: "Makan bersama, penuh tawa" },
     { src: "assets/img/album-03.jpg", caption: "Bimbingan Mental" },
     { src: "assets/img/album-04.jpg", caption: "Semangat terus!" },
+    { src: "assets/img/album-05.jpg", caption: "Ngopi santai bersama sahabat" },
+    { src: "assets/img/album-06.jpg", caption: "Kebersamaan dalam balutan wastra" },
+    { src: "assets/img/album-07.jpg", caption: "Bersama rekan-rekan Kemenkeu" },
+    { src: "assets/img/album-08.jpg", caption: "Ceria dalam busana nusantara" },
+    { src: "assets/img/album-09.jpg", caption: "Salam hangat & kenang-kenangan" },
   ],
 
   closing:
