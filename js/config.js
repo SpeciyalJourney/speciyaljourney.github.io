@@ -141,7 +141,7 @@ window.SPECIYAL = {
     dateLabel: "31 Oktober 2026",
     timeLabel: "06.00 WIB — selesai",
     venue: "Kebun Raya Bogor",
-    venueSub: "Lokasi acara: Resto Raasaa",
+    venueSub: "",
     // Poin-poin info acara (ditampilkan sebagai daftar)
     notes: [
       "Meeting point pukul 07.30 WIB di Pintu Masuk 1, Kebun Raya Bogor",

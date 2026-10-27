@@ -67,6 +67,7 @@
   $("evTime").textContent = E.timeLabel;
   $("evVenue").textContent = E.venue;
   $("evAddr").textContent = E.venueSub || "";
+  $("evAddr").hidden = !E.venueSub;
   $("evNotes").innerHTML = (E.notes || []).map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("");
   $("evDress").textContent = E.dressCode;
   $("mapBtn").href = E.mapsLink || ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(E.mapsQuery));
